@@ -1,5 +1,6 @@
 import { useState } from "react"
 import styles from './form.module.css'
+import todoService from '../services/todos'
 
 export default function Form({todos, setTodos}) {
 
@@ -9,12 +10,34 @@ export default function Form({todos, setTodos}) {
     //we want our todos to have status as done or not done
     //for that we need to change the value of our todo state to a 
     //object having a name string and done status of boolean
-    const [todo, setTodo] = useState({name:'', done:false}) 
+    const [todo, setTodo] = useState({
+        name: '',
+        done: false,
+        important: false,
+    })
+    
 
-    function handleSubmite(e) {
+    const addTodo = (e) => {
         e.preventDefault()
-        setTodos([...todos, todo])
-        setTodo({name:'', done:false})
+        const todoExists = todos.find(item => item.name.toLowerCase() === todo.name.toLowerCase())
+        if (todoExists) {
+            alert(`${todoExists.name} is already in the list try another!`)
+            setTodo({name:'', done:false, important: false})
+            
+        }
+        // else if (todo.name === "") {
+        //     alert("Nothing to add")
+        // }
+        else {
+            todoService
+                .create(todo)
+                .then(newTodo => {                    
+                    setTodos([...todos, newTodo]) 
+                    setTodo({name:'', done:false, important: false})
+                }).catch(error => error.response.data.error)
+                
+        }
+        
     }
 
     function handleInputChange(e) {
@@ -23,17 +46,17 @@ export default function Form({todos, setTodos}) {
         //now our state todo is an object and we need to this 
         // e.target.value to the name property of our object
         // plus adding the done statues to false intially
-        setTodo({name:e.target.value, done: false})
+        setTodo({name:e.target.value, done: false, important: false})
     }
 
     return (
         
-        <form className={styles.todoForm} onSubmit={handleSubmite}>
+        <form key={todo.id} className={styles.todoForm} onSubmit={addTodo}>
             <div className={styles.inputContainer}>
                 <input
                     className={styles.modernInput}
                     onChange={handleInputChange}
-                    // change the value to todo.name 
+                    // change the value to todo.name
                     //because now our value object.name
                     value={todo.name}
                     type="text"

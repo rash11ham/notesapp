@@ -1,8 +1,8 @@
-import { useState } from "react"
-import TodoItem from "./TodoItem"
+import { useState, useEffect } from "react"
 import Form from './Form'
 import TodoList from "./TodoList"
 import Footer from "./Footer"
+import todoService from '../services/todos'
 
 export default function Todo() { 
 
@@ -12,6 +12,16 @@ export default function Todo() {
     //form and todolist component uses this bellow state
     
     const [todos, setTodos] = useState([])
+    
+    //In order to fetch data from the server we need to use useEffect hook
+    //import the useEffect hook as useState was imported
+    useEffect(() => {
+        todoService
+            .getAll()
+            .then(allTodos => {
+                setTodos(allTodos)  
+            })
+    }, [])
 
     //List the todos with status done = true
     //item.done by default means items status is equal to true

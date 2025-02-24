@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": "cf4d",
+      "name": "Milk",
+      "done": false,
+      "important": false
+    },
+    {
+      "id": "fc34",
+      "name": "Roller",
+      "done": false,
+      "important": false
+    },
+    {
+      "id": "2a96",
+      "name": "Cucumber",
+      "done": false,
+      "important": false
+    },
+    {
+      "id": "1328",
+      "name": "Bananas",
+      "done": false,
+      "important": false
+    }
+  ]
+}
