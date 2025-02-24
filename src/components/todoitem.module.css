@@ -1,5 +1,6 @@
 .item{
-    width: 500px;
+    max-width: 500px;
+    width: 95%;
     color: #3c443c;
     font-size: 20px;
     margin: 0 auto;
@@ -7,7 +8,11 @@
 
 .itemName {
     font-weight: bold;
-    padding: 20px;
+    padding: 6px 10px;
+    color: #f76a18;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .line{
@@ -27,5 +32,16 @@
 
 .completed {
     text-decoration: line-through
+}
+
+.importantButton {
+    float: right;
+    border: none;
+    background-color: rgb(223, 223, 204);
+    padding: 6px 10px;
+    color: #f76a18;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
 }
 
