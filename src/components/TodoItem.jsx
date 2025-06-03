@@ -4,8 +4,15 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 
 
+<<<<<<< HEAD
 export default function TodoItem({ todo, toggleImportance, toggleDone, handleDelete }) {
 
+=======
+
+
+export default function TodoItem({ todo, toggleImportance, toggleDone, handleDelete }) {
+
+>>>>>>> 5f93d34acf0123f67804239fbd494993f5ff134e
     const important = todo.important
         ? <FontAwesomeIcon icon={ faStar } /> : <FontAwesomeIcon icon={faHeart} />
 

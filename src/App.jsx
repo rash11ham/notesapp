@@ -5,6 +5,10 @@ import LoginForm from './components/LoginForm'
 
 
 const App = () => {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5f93d34acf0123f67804239fbd494993f5ff134e
   return (
     <div className="App">
       <Todo />

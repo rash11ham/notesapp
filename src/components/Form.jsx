@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react"
 import styles from './form.module.css'
 import todoService from '../services/todos'
+<<<<<<< HEAD
 import loginService from '../services/login'
 import Header from "./Header"
+=======
+>>>>>>> 5f93d34acf0123f67804239fbd494993f5ff134e
 
 export default function Form({todos, setTodos, user, setUser}) {
 
@@ -17,6 +20,7 @@ export default function Form({todos, setTodos, user, setUser}) {
         done: false,
         important: false,
     })
+<<<<<<< HEAD
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -68,6 +72,29 @@ export default function Form({todos, setTodos, user, setUser}) {
             }
         } catch(error){
            alert(error.response.data.error)
+=======
+    
+
+    const addTodo = (e) => {
+        e.preventDefault()
+        const todoExists = todos.find(item => item.name.toLowerCase() === todo.name.toLowerCase())
+        if (todoExists) {
+            alert(`${todoExists.name} is already in the list try another!`)
+            setTodo({name:'', done:false, important: false})
+            
+        }
+        // else if (todo.name === "") {
+        //     alert("Nothing to add")
+        // }
+        else {
+            todoService
+                .create(todo)
+                .then(newTodo => {                    
+                    setTodos([...todos, newTodo]) 
+                    setTodo({name:'', done:false, important: false})
+                }).catch(error => error.response.data.error)
+                
+>>>>>>> 5f93d34acf0123f67804239fbd494993f5ff134e
         }
         
     }
@@ -81,7 +108,12 @@ export default function Form({todos, setTodos, user, setUser}) {
         setTodo({name:e.target.value, done: false, important: false})
     }
 
+<<<<<<< HEAD
     const todoForm = () => (
+=======
+    return (
+        
+>>>>>>> 5f93d34acf0123f67804239fbd494993f5ff134e
         <form key={todo.id} className={styles.todoForm} onSubmit={addTodo}>
             <div className={styles.inputContainer}>
                 <input

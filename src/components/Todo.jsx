@@ -3,7 +3,10 @@ import Form from './Form'
 import TodoList from "./TodoList"
 import Footer from "./Footer"
 import todoService from '../services/todos'
+<<<<<<< HEAD
 import LoginForm from "./LoginForm"
+=======
+>>>>>>> 5f93d34acf0123f67804239fbd494993f5ff134e
 
 export default function Todo() { 
 
@@ -14,6 +17,7 @@ export default function Todo() {
     
     const [todos, setTodos] = useState([])
     
+<<<<<<< HEAD
     const [user, setUser] = useState(null)  
         
     useEffect(() => {
@@ -28,12 +32,21 @@ export default function Todo() {
     //In order to fetch data from the server we need to use useEffect hook
     //import the useEffect hook as useState was imported
     
+=======
+    //In order to fetch data from the server we need to use useEffect hook
+    //import the useEffect hook as useState was imported
+>>>>>>> 5f93d34acf0123f67804239fbd494993f5ff134e
     useEffect(() => {
         todoService
             .getAll()
             .then(allTodos => {
+<<<<<<< HEAD
                 setTodos(allTodos) 
             })      
+=======
+                setTodos(allTodos)  
+            })
+>>>>>>> 5f93d34acf0123f67804239fbd494993f5ff134e
     }, [])
 
     //List the todos with status done = true

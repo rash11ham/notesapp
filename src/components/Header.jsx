@@ -16,6 +16,7 @@ export default function Header({ user }) {
     }
     
     return <div className={styles.header}>
+<<<<<<< HEAD
         
         <p className={styles.note}>Notes</p>
         
@@ -25,5 +26,8 @@ export default function Header({ user }) {
         <p className={styles.userName}>{logUser !== null ? `Hello ${logUser.name}` : ''}</p>
 
         
+=======
+        Notes
+>>>>>>> 5f93d34acf0123f67804239fbd494993f5ff134e
     </div>
 }
