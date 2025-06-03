@@ -1,10 +1,6 @@
 .header{
     background-color: rgba(255, 166, 0, 0.856);
     text-align: center;
-    font-weight: bold;
-    font-size: 2em;
-    padding: 10px;
-    height: 50px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     color: antiquewhite;
     position: fixed;
@@ -12,3 +8,35 @@
     top: 0;
 
 }
+
+.note {
+    float: left;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 12px;
+    
+}
+
+.logoutButton {
+    float: right;    
+    background-color: rgba(255, 166, 0, 0.856);
+    color: white;
+    border: solid;  
+    margin: 12px;
+    
+}
+
+.userName {
+    float: right; 
+    margin: 12px;
+    font-size: 20px;
+}
+
+
+/* @media screen and (max-width: 500px) {
+  .header {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+} */

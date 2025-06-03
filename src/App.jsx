@@ -1,13 +1,12 @@
 import Todo from './components/Todo'
 import Header from './components/Header'
 import './App.css'
+import LoginForm from './components/LoginForm'
 
 
-function App() {
-
+const App = () => {
   return (
     <div className="App">
-      <Header />
       <Todo />
     </div>
   )

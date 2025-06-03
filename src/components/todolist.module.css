@@ -2,7 +2,8 @@
     background-color: oldlace;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgb(0,0,0,0.2);
-    width: 500px;
+    max-width: 500px;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
     margin-top: 50px;
